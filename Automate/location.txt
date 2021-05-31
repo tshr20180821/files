@@ -1,0 +1,63 @@
+location
+
+呼び出し元 : AutomateIt - ロック画面解除時
+
++----------------+
+| Flow beginning |
+| "location"     |
++-GO-------------+
+  |
++-IN-----------------------------------+
+| Bluetooth device connected?          |
+| Proceed : Immediately                |
+| Device name : internavi              |
+| Device address : xx:xx:xx:xx:xx:xx   |
+| Device type : Audiovisual: Handsfree |
++-YES---NO-----------------------------+
+        |
++-------IN
+| Toast show
+| Message : update start
+| Duration : Short
++-OK
+  |
++-IN
+| Variable set
+| variable : deliveries
+| Value : ["xxx", "xxx"]
++-OK
+  |
++-IN--------------+
+| Failure catch   |
+| Retry limit : 0 |
++-OK--------------+
+  |
++-IN---------------------------------+
+| Location get                       |
+| Proceed : Maybe Immediately        |
+| Location fix latitude : latitude   |
+| Location fix longitude : longitude |
++-OK---------------------------------+
+  |
++-IN--------------------------------+
+| Geocoding reverse?                |
+| Latitude : = latitude             |
+| Longitude : = longitude           |
+| Language : 日本語                  |
+| Decoded location name : location  |
++-YES-------------------------------+
+  |
++-IN
+| Log append
+| Message : location
++-OK
+  |
++-IN--------------+
+| Failure catch   |
++-OK--------------+
+  |
++-IN
+| HTTP Request
+| Request URL : = "https://xxx" ++ (((dateFormat(Now, "H") + 0) // 8) + 7) + ".herokuapp.com/xxx.png"
+
+
