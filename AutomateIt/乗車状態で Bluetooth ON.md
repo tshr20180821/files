@@ -1,4 +1,4 @@
-車で Bluetooth ON
+乗車状態で Bluetooth ON
 
 - トリガー
   - ユーザーの活動状態は "乗車" です
