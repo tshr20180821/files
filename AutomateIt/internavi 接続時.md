@@ -4,4 +4,4 @@ internavi 接続時
   - internavi の接続時
 
 - アクション
-  - ショートカットの実行 automate bluetooth
+  - ショートカットの実行 Automate bluetooth
