@@ -3,5 +3,31 @@
 +----------------+
 | Flow beginning |
 | "車載"          |
-+----------------+
-
++-GO-------------+
+  |
++-IN---------------------------------+
+| Location get                       |
+| Proceed : Maybe Immediately        |
+| Location fix latitude : latitude   |
+| Location fix longitude : longitude |
++-OK---------------------------------+
+  |
++-IN--------------------------------+
+| Geocoding reverse?                |
+| Latitude : = latitude             |
+| Longitude : = longitude           |
+| Language : 日本語                  |
+| Decoded location name : location  |
++-YES-------------------------------+
+  |
++-IN---------------------------------------------+
+| E-mail send                                    |
+| Hostname or IP address : smtp.mail.yahoo.co.jp |
+| Port : 465                                     |
+| Log in account : xxx@yahoo.co.jp               |
+| COnnection security : SSL/TLS                  |
+| From : xxx@yahoo.co.jp                         |
+| To : xxx                                       |
+| Subject : bluetooth connected in my car        |
+| Message : = location                           |
++-OK---------------------------------------------+
