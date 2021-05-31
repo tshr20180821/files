@@ -1,5 +1,8 @@
 車載
 
+呼び出し元 : AutomateIt - internavi 接続時
+resize.sh : Termux
+
 +----------------+
 | Flow beginning |
 | "車載"          |
