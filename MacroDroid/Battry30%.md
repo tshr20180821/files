@@ -1,4 +1,4 @@
-Battery30%
+Battery30% 
 充電通知用
 
 - トリガー
