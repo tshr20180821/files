@@ -54,7 +54,9 @@
 | Proceed : Immediately                                       |
 | Package : jp.co.yahoo.android.apps.navi                     |
 | Activity class : jp.co.yahoo.android.apps.navi.MainActivity |
-+-YES---------------------------------------------------------+
++-YES---NO----------------------------------------------------+
+  |     |
+  |    [C]
   |
 +-IN----------------------------------+
 | Screenshot                          |
@@ -65,6 +67,8 @@
 | App shortcut start         |
 | Shortcut label : resize.sh |
 +-OK-------------------------+
+  |
+  |-[C]
   |
 +-IN--------------+
 | Delay           |
