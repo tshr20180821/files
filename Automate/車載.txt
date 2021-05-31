@@ -31,3 +31,39 @@
 | Subject : bluetooth connected in my car        |
 | Message : = location                           |
 +-OK---------------------------------------------+
+  |
++-IN--------------+
+| Wi-Fi set state |
+| Wi-Fi : Off     |
++-OK--------------+
+  |
++-IN-----------------------------------+
+| Bluetooth device connected?          |
+| Proceed : Immediately                |
+| Device name : internavi              |
+| Device address : xx:xx:xx:xx:xx:xx   |
+| Device type : Audiovisual: Handsfree |
++-YES----------------------------------+
+  |
++-IN----------------------------------------------------------+
+| App in foreground?                                          |
+| Proceed : Immediately                                       |
+| Package : jp.co.yahoo.android.apps.navi                     |
+| Activity class : jp.co.yahoo.android.apps.navi.MainActivity |
++-YES---------------------------------------------------------+
+  |
++-IN----------------------------------+
+| Screenshot                          |
+| Path : DCIM/Automate/screenshot.png |
++-OK----------------------------------+
+  |
++-IN-------------------------+
+| App shortcut start         |
+| Shortcut label : resize.sh |
++-OK-------------------------+
+  |
++-IN--------------+
+| Delay           |
+| Proceed : Exact |
+| Deutation : 30s |
++-OK--------------+
