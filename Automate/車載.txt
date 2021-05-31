@@ -37,13 +37,17 @@
 | Wi-Fi : Off     |
 +-OK--------------+
   |
+  |-[A]
+  |
 +-IN-----------------------------------+
 | Bluetooth device connected?          |
 | Proceed : Immediately                |
 | Device name : internavi              |
 | Device address : xx:xx:xx:xx:xx:xx   |
 | Device type : Audiovisual: Handsfree |
-+-YES----------------------------------+
++-YES---NO-----------------------------+
+  |     |
+  |    [B]
   |
 +-IN----------------------------------------------------------+
 | App in foreground?                                          |
@@ -67,3 +71,20 @@
 | Proceed : Exact |
 | Deutation : 30s |
 +-OK--------------+
+  |
+ [A]
+ 
+ [B]
+  |
++-IN---------------------------------------------+
+| E-mail send                                    |
+| Hostname or IP address : smtp.mail.yahoo.co.jp |
+| Port : 465                                     |
+| Log in account : xxx@yahoo.co.jp               |
+| COnnection security : SSL/TLS                  |
+| From : xxx@yahoo.co.jp                         |
+| To : xxx                                       |
+| Subject : bluetooth disconnected in my car     |
+| Message : = location                           |
++-OK---------------------------------------------+
+  
