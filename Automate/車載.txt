@@ -85,6 +85,6 @@
 | From : xxx@yahoo.co.jp                         |
 | To : xxx                                       |
 | Subject : bluetooth disconnected in my car     |
-| Message : = location                           |
+| Message : disconnected                         |
 +-OK---------------------------------------------+
   
