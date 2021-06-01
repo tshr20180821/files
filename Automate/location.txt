@@ -59,5 +59,46 @@ location
 +-IN
 | HTTP Request
 | Request URL : = "https://xxx" ++ (((dateFormat(Now, "H") + 0) // 8) + 7) + ".herokuapp.com/xxx.png"
+| Basic authorization account : xxx
+| Save response : Save to file
+| Response path : com.gmail.kanitama.glaeja/images/shinkansen.png
++-OK
+  |
++-IN
+| HTTP Request
+| Request URL : = "https://xxx" ++ (((dateFormat(Now, "H") + 0) // 8) + 8) + ".herokuapp.com/xxx.png"
+| Request method : POST
+| Request content type : Web form
+| Request content body : 
+| Basic authorization account : xxx
+| Save response : Save to file
+| Response path : com.gmail.kanitama.glaeja/images/temperature.png
+| Response headers dictionary : response_headers
++-OK
+  |
++-IN
+| Variable set
+| Variable : location
+| Value : urlDecode(response_headers["X-Location"])
++-OK
+  |
++--
+| Expression true?
+| Formula : = splic(location, ",")[16] = "1"
++-YES
+  |
++--
+| Bluetooth tethering enabled?
++-YES
 
++-IN
+| App start
+| Package : jp.co.nicumaru.bluetoothtetheronoff
+| Activity class : jp.co.nicumaru.bluetoothtetheronoff.MainActivity
++-
+
++-IN
+| Wi-Fi set state
+| WI-Fi : = 2 - split(llocation, ",")[16]
++-OK
 
