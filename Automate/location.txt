@@ -30,7 +30,9 @@ location
 +-IN--------------+
 | Failure catch   |
 | Retry limit : 0 |
-+-OK--------------+
++-OK---FAIL-------+
+  |     |
+  |    [A]
   |
 +-IN---------------------------------+
 | Location get                       |
@@ -45,7 +47,19 @@ location
 | Longitude : = longitude           |
 | Language : 日本語                  |
 | Decoded location name : location  |
-+-YES-------------------------------+
++-YES---NO--------------------------+
+  |     |
+ [B]   [A]
+ 
+ [A]
+  |
++-IN----------------------+
+| Toast show              |
+| Message : update failed |
+| Duration : Short        |
++-OK----------------------+
+
+ [B]
   |
 +-IN-----------------+
 | Log append         |
