@@ -105,24 +105,103 @@ location
 | Value : urlDecode(response_headers["X-Location"]) |
 +-OK------------------------------------------------+
   |
-+--------------------------------------------+
++-IN-----------------------------------------+
 | Expression true?                           |
 | Formula : = splic(location, ",")[16] = "1" |
-+-YES----------------------------------------+
++-YES---NO-----------------------------------+
+  |     |
+  |    [D]
   |
-+------------------------------+
++-IN---------------------------+
 | Bluetooth tethering enabled? |
-+-YES--------------------------+
-
-+-IN----------------------------------------------------------------+
++-YES---NO---------------------+
+  |     |
+ [E]    |
+        |
++-------IN----------------------------------------------------------+
 | App start                                                         |
 | Package : jp.co.nicumaru.bluetoothtetheronoff                     |
 | Activity class : jp.co.nicumaru.bluetoothtetheronoff.MainActivity |
-+-------------------------------------------------------------------+
-
++-OK----------------------------------------------------------------+
+  |
+ [F]
+ 
+ [D]
+  |
++-IN-----------------------------------------+
+| Expression true?                           |
+| Formula : = splic(location, ",")[16] = "2" |
++-YES---NO-----------------------------------+
+  |     |
+  |    [G]
+  |
++-IN------------------+
+| Bluetooth set state |
+| Blutooth : Off      |
++-OK------------------+
+  |
++-IN-------------------+
+| Audio volume set     |
+| Volume : 0%          |
+| Audio stream : Music |
++-OK-------------------+
+  |
+  |-[E]
+  |-[F]
+  |
 +-IN--------------------------------------+
 | Wi-Fi set state                         |
 | WI-Fi : = 2 - split(llocation, ",")[16] |
 +-OK--------------------------------------+
+  |
+  |-[G]
+  |
++-IN-----------+
+| NFC enabled? |
+| Immediately  |
++-YES---NO-----+
+  |     |
+  |    [H]
+  |
++-IN------------------------+
+| Variable set              |
+| Variable : location       |
+| Value : location ++ ",on" |
++-OK------------------------+
+  |
+ [I]
 
+ [H]
+  |
++-IN-------------------------+
+| Variable set               |
+| Variable : location        |
+| Value : location ++ ",off" |
++-OK-------------------------+
+  |
+  |-[I]
+  |
++-IN---------------------------------+
+| Plug-in action                     |
+| Pick plug in : Glaeja              |
+| Description : location = %location |
++-OK---------------------------------+
+  |
++-IN-------------------------------------------+
+| Variable set                                 |
+| Variable : kwgt                              |
+| Value : urlDecode(response_headers["X-Kwgt"] |
++-OK-------------------------------------------+
+  |
++-IN--------------------------------+
+| Plug-in action                    |
+| Pick plug in : KWGT Send Variable |
+| Description : Set: kwgt           |
++-OK--------------------------------+
+  |
++-IN----------------------+
+| Toast show              |
+| Message : update finish |
+| Duration : Short        |
++-OK----------------------+
 
