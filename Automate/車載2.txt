@@ -1,0 +1,82 @@
+車載
+
+呼び出し元 : AutomateIt - internavi 接続時
+resize.sh : Termux
+
++----------------+
+| Flow beginning |
+| "車載"          |
++-GO-------------+
+  |
++-IN--------------+
+| Wi-Fi set state |
+| Wi-Fi : Off     |
++-OK--------------+
+  |
++-IN----------------------------------------------+
+| App start                                       |
+| Package : com.spotify.music                     |
+| Activity class : com.spotify.music.MainActivity |
+| Action : Main                                   |
++-OK----------------------------------------------+
+  |
++-IN-------------------------------------------------------------------------+
+| App start                                                                  |
+| Package : jp.co.yahoo.android.apps.navi                                    |
+| Activity class : jp.co.yahoo.android.apps.navi.MainActivity                |
+| Action : Web search                                                        |
+| Data URI : yjcarnavi://navi/select?lat=xx.xxxxxx&lon=xxx.xxxxxx&name=dummy |
++-OK-------------------------------------------------------------------------+
+  |
++-IN--------------+
+| Delay           |
+| Proceed : Exact |
+| Deutation : 10s |
++-OK--------------+
+  |
++-IN-----------------------------------------------------------------------+
+| Audio player control                                                     |
+| Command : Play                                                           |
+| Method : Media button                                                    |
+| Package : com.spotify.music                                              |
+| Activity class : com.spotify.music.internal.receiver.MediaButtonReceiver |
++-OK-----------------------------------------------------------------------+
+  |
+  |-[A]
+  |
++-IN-----------------------------------+
+| Bluetooth device connected?          |
+| Proceed : Immediately                |
+| Device name : internavi              |
+| Device address : xx:xx:xx:xx:xx:xx   |
+| Device type : Audiovisual: Handsfree |
++-YES---NO-----------------------------+
+  |
++-IN----------------------------------------------------------+
+| App in foreground?                                          |
+| Proceed : Immediately                                       |
+| Package : jp.co.yahoo.android.apps.navi                     |
+| Activity class : jp.co.yahoo.android.apps.navi.MainActivity |
++-YES---NO----------------------------------------------------+
+  |     |
+  |    [B]
+  |
++-IN----------------------------------+
+| Screenshot                          |
+| Path : DCIM/Automate/screenshot.png |
++-OK----------------------------------+
+  |
++-IN-------------------------+
+| App shortcut start         |
+| Shortcut label : resize.sh |
++-OK-------------------------+
+  |
+  |-[B]
+  |
++-IN--------------+
+| Delay           |
+| Proceed : Exact |
+| Deutation : 30s |
++-OK--------------+
+  |
+ [A]
