@@ -1,6 +1,6 @@
 車載
 
-呼び出し元 : AutomateIt - internavi 接続時
+script1.sh : Termux
 resize.sh : Termux
 
 +----------------+
@@ -8,25 +8,10 @@ resize.sh : Termux
 | "車載"          |
 +-GO-------------+
   |
-+-IN--------------+
-| Wi-Fi set state |
-| Wi-Fi : Off     |
-+-OK--------------+
-  |
-+-IN----------------------------------------------+
-| App start                                       |
-| Package : com.spotify.music                     |
-| Activity class : com.spotify.music.MainActivity |
-| Action : Main                                   |
-+-OK----------------------------------------------+
-  |
-+-IN-------------------------------------------------------------------------+
-| App start                                                                  |
-| Package : jp.co.yahoo.android.apps.navi                                    |
-| Activity class : jp.co.yahoo.android.apps.navi.MainActivity                |
-| Action : Web search                                                        |
-| Data URI : yjcarnavi://navi/select?lat=xx.xxxxxx&lon=xxx.xxxxxx&name=dummy |
-+-OK-------------------------------------------------------------------------+
++-IN--------------------------+
+| App shortcut start          |
+| Shortcut label : script1.sh |
++-OK--------------------------+
   |
 +-IN--------------+
 | Delay           |
