@@ -8,6 +8,11 @@ resize.sh : Termux
 | "車載"          |
 +-GO-------------+
   |
++-IN------------------+
+| Bluetooth set state |
+| Bluetooth : On      |
++-OK------------------+
+  |
 +-IN--------------------------+
 | App shortcut start          |
 | Shortcut label : script1.sh |
