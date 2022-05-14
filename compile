@@ -8,7 +8,9 @@ ENV_DIR=$3
 DOWNLOAD_URI=$(cat ${ENV_DIR}/MATTERMOST_DOWNLOAD_URI)
 
 # add begin
+echo $(pwd)
 pushd ${BUILD_DIR}
+echo $(pwd)
 curl -sS --create-dirs -o heroku/heroku.tar.xz $(curl -sS https://cli-assets.heroku.com/linux-x64 | grep -oE https.+xz)
 
 pushd heroku
