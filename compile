@@ -16,7 +16,7 @@ curl -sS --create-dirs -o heroku/heroku.tar.xz $(curl -sS https://cli-assets.her
 
 pushd heroku
 tar xf heroku.tar.xz --strip-components=1
-rm heroku.tar.xz
+# rm heroku.tar.xz
 ./bin/heroku plugins --core
 ./bin/heroku update &
 rm heroku.tar.xz
