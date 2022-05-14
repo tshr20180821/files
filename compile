@@ -8,6 +8,7 @@ ENV_DIR=$3
 DOWNLOAD_URI=$(cat ${ENV_DIR}/MATTERMOST_DOWNLOAD_URI)
 
 # add begin
+set -x
 echo $(pwd)
 pushd ${BUILD_DIR}
 echo $(pwd)
